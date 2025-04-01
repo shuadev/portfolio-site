@@ -1,7 +1,3 @@
-# Portfolio-site
-
-This is an open source project to use as a portfolio site. This has been created with React, Vite, and Tailwindcss
-
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

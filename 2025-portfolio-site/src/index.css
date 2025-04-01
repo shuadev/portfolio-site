@@ -1,0 +1,139 @@
+/* if I want to add fonts directly from a file, locally
+@font-face {
+  font-family: VT323;
+  src: url("../src/assets/fonts/...")
+} */
+
+/* import fonts from google */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=VT323&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --font-vt323: VT323, monospace;
+  --font-poppins: Poppins, Avenir, sans-serif;
+  --color-bgColour: #230e86;
+  --color-lightPink: #ef9cb4;
+  --color-btnPink: #ffa4dc;
+  --color-darkPink: #f96b94;
+  --color-lightGreen: #def5ea;
+  --color-green: #0daf61;
+  --color-darkGreen: #00582d;
+}
+@layer base {
+  .font-outline-2 {
+    -webkit-text-stroke: 2px #00582d;
+  }
+  .font-outline-1 {
+    -webkit-text-stroke: 1px #00582d;
+  }
+}
+
+:root {
+  font-family: Avenir, system-ui, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+
+  @apply text-lightGreen bg-lightGreen
+  /* 
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */;
+}
+
+body {
+  @apply h-full m-0;
+}
+
+video {
+  @apply absolute w-auto min-w-full min-h-full -z-10 max-w-none;
+}
+
+.pink-container {
+  @apply rounded-[7rem] bg-lightPink/83 p-8 w-3/5 m-auto justify-evenly flex flex-col items-center shadow-[0_10px_0px_rgba(249,107,148,1)];
+}
+
+.logo-icon-wrapper {
+  @apply m-4 rounded-full bg-darkPink max-w-40 max-h-40;
+}
+
+.card-title {
+  @apply m-8 text-5xl text-green font-vt323;
+  text-shadow: -2px -2px 0 #00582d, 2px -2px 0 #00582d, -2px 2px 0 #00582d,
+    2px 2px 0 #00582d;
+  /* drop-shadow-[1.3px_2px_0px_rgba(0,88,45,1)] */
+}
+
+.btn-wrapper {
+  @apply flex gap-4 m-4;
+}
+
+button {
+  @apply w-40 p-6 text-3xl rounded-full cursor-pointer hover:translate-y-0.5 font-vt323;
+  /* motion-safe:hover:animate-bounce */
+}
+
+.button-light-pink {
+  @apply bg-btnPink text-darkGreen shadow-[0_3px_0px_rgba(249,107,148,1)];
+}
+
+.button-dark-pink {
+  @apply bg-darkPink text-lightGreen shadow-[0_3px_0px_rgba(255,164,220,1)];
+}
+
+footer {
+  @apply absolute bottom-0 flex items-center justify-center w-full m-2;
+}
+
+.svg-wrapper {
+  @apply flex gap-8 px-6 py-2 bg-lightPink/83 rounded-2xl;
+}
+
+a {
+  @apply cursor-pointer hover:underline;
+}
+
+.footer-svg {
+  @apply rounded size-12 hover:shadow-md;
+}
+
+.nav-bar {
+  @apply bg-lightPink text-green font-bold text-3xl my-0 py-2 px-6 rounded-b-[3rem] flex justify-between items-center font-vt323;
+  text-shadow: -1px -1px 0 #00582d, 1px -1px 0 #00582d, -1px 1px 0 #00582d,
+    1px 1px 0 #00582d;
+}
+
+.nav-wrapper {
+  @apply flex items-center gap-10;
+}
+
+.nav-img-wrapper {
+  @apply rounded-full bg-darkPink max-h-16 max-w-16 hover:shadow-lg hover:cursor-pointer;
+}
+
+.menu-btn {
+  @apply relative flex items-center justify-center w-16 h-16 rounded-full hover:bg-lightGreen/30 bg-darkPink hover:no-underline hover:shadow-lg;
+}
+
+.menu-btn span {
+  @apply absolute inset-0 z-10;
+}
+
+/* .page-main {
+  @apply h-full; 
+} */
+
+.green-card {
+  @apply flex flex-col items-start justify-center w-1/2 max-w-4xl mx-auto my-8 align-top border rounded-lg shadow-md text-darkGreen border-green bg-lightGreen;
+}
+
+.green-card-title {
+  @apply px-2 text-3xl rounded-lg text-green font-vt323;
+}
+
+.green-card-text-content {
+  @apply p-2 text-base font-light font-poppins;
+}
